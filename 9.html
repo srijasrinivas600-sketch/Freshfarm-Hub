@@ -4,7 +4,6 @@
 <title>Fresh Farm Hub - Choose Language</title>
 
 <style>
-
 body{
 margin:0;
 font-family:Arial;
@@ -15,8 +14,6 @@ align-items:center;
 height:100vh;
 }
 
-/* Main box */
-
 .container{
 background:white;
 padding:30px;
@@ -26,21 +23,15 @@ text-align:center;
 width:300px;
 }
 
-/* Title */
-
 h2{
 color:#2E7D32;
 margin-bottom:20px;
 }
 
-/* Language options */
-
 .lang-option{
 margin:10px 0;
 font-size:18px;
 }
-
-/* Button */
 
 button{
 margin-top:20px;
@@ -57,7 +48,6 @@ transition:0.3s;
 button:hover{
 background:#1b5e20;
 }
-
 </style>
 </head>
 
@@ -92,10 +82,12 @@ return;
 
 if(lang.value === "telugu"){
 alert("మీరు తెలుగు ఎంపిక చేశారు");
+window.location.href = "telugu_home.html"; 
 }
 
 if(lang.value === "english"){
 alert("You selected English");
+window.location.href = "admin.html"; 
 }
 
 }
