@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    margin:0;
+    background:#f4f4f4;
+    text-align:center;
+}
+
+h1{
+    margin-top:30px;
+}
+
+.admin-container{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    margin-top:40px;
+}
+
+.admin{
+    cursor:pointer;
+}
+
+.admin img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:4px solid #2E7D32;
+}
+
+.admin p{
+    font-weight:bold;
+}
+
+.info-container{
+    margin-top:40px;
+}
+
+.person-card{
+    background:white;
+    width:320px;
+    margin:20px auto;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    text-align:left;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Admin Dashboard</h1>
+
+<div class="admin-container">
+
+<div class="admin" onclick="showAdmin1()">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9xW8gLQHmdrAadjSzUnHxlbcxjdagvDV2BQ&s">
+<p>Admin 1</p>
+</div>
+
+<div class="admin" onclick="showAdmin2()">
+<img src="https://img.freepik.com/free-vector/cute-girl-hacker-operating-laptop-cartoon-vector-icon-illustration-people-technology-isolated-flat_138676-9487.jpg?semt=ais_rp_progressive&w=740&q=80">
+<p>Admin 2</p>
+</div>
+
+</div>
+
+<div class="info-container" id="info"></div>
+
+<script>
+
+function showAdmin1(){
+
+document.getElementById("info").innerHTML = `
+
+<div class="person-card">
+<b>Name:</b> Madhu Jessy.P<br>
+<b>Age:</b> 20<br>
+<b>Gender:</b> Female<br>
+<b>Phone:</b> 9876543210<br>
+<b>Email:</b> jessyy@gmail.com<br>
+<b>Address:</b> Bhimavaram, India
+</div>
+
+`;
+
+}
+
+function showAdmin2(){
+
+document.getElementById("info").innerHTML = `
+
+<div class="person-card">
+<b>Name:</b> Meghana Chandini<br>
+<b>Age:</b> 20<br>
+<b>Gender:</b> Female<br>
+<b>Phone:</b> 9988776655<br>
+<b>Email:</b> meghu@gmail.com<br>
+<b>Address:</b> Bhimavaram, India
+</div>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>

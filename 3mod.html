@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Details</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            background: url('https://img.freepik.com/free-photo/green-tea-bud-leaves-green-tea-plantations-morning_335224-955.jpg?semt=ais_rp_progressive&w=740&q=80') no-repeat center center/cover;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background: rgba(255,255,255,0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+            width: 350px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #2E7D32;
+            margin-bottom: 25px;
+        }
+
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .gender-box {
+            margin: 10px 0;
+        }
+
+        .gender-box label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #2E7D32;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .form-container button:hover {
+            background: #1B5E20;
+        }
+
+        #message {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: green;
+        }
+
+        @media (max-width: 400px) {
+            .form-container { width: 90%; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Personal Details</h2>
+
+    <input type="text" id="name" placeholder="Full Name">
+
+    <input type="number" id="age" placeholder="Age" min="18" max="100">
+
+    <div class="gender-box">
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <input type="radio" name="gender" value="Other"> Other
+    </div>
+
+    <input type="tel" id="mobile" placeholder="Phone Number">
+
+    <input type="text" id="address" placeholder="Address">
+
+    <select id="role">
+        <option value="">Select Role</option>
+        <option value="Buyer">Buyer</option>
+        <option value="Seller">Seller</option>
+        <option value="Delivery">Delivery Person</option>
+    </select>
+
+    <button onclick="submitDetails()">Submit</button>
+
+    <div id="message"></div>
+</div>
+
+<script>
+function submitDetails() {
+
+    let name = document.getElementById('name').value.trim();
+    let age = document.getElementById('age').value.trim();
+    let mobile = document.getElementById('mobile').value.trim();
+    let address = document.getElementById('address').value.trim();
+    let role = document.getElementById('role').value;
+
+    let gender = document.querySelector('input[name="gender"]:checked');
+
+    if(!name || !age || !mobile || !address || !role || !gender) {
+        alert("Please fill all fields!");
+        return;
+    }
+
+    document.getElementById('message').innerText = "Details submitted successfully!";
+
+    document.getElementById('name').value = '';
+    document.getElementById('age').value = '';
+    document.getElementById('mobile').value = '';
+    document.getElementById('address').value = '';
+    document.getElementById('role').value = '';
+
+    let radios = document.querySelectorAll('input[name="gender"]');
+    radios.forEach(r => r.checked = false);
+}
+</script>
+
+</body>
+</html>

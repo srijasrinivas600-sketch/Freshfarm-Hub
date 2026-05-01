@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('https://png.pngtree.com/thumb_back/fh260/background/20240725/pngtree-the-concept-of-new-farming-or-smart-farming-agricultural-technology-image_15917909.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            width: 350px;
+            text-align: center;
+        }
+
+        .form-container h2 {
+            margin-bottom: 30px;
+            color: #2E7D32;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #2E7D32;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .form-container button:hover {
+            background: #1B5E20;
+        }
+
+        @media (max-width: 400px) {
+            .form-container { width: 90%; padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="form-container">
+            <h2>Registration</h2>
+
+            <input type="tel" id="phone" placeholder="Phone Number">
+            <input type="text" id="code" placeholder="Auto Fill Code">
+
+            <button onclick="register()">Register</button>
+        </div>
+    </div>
+
+    <script>
+        function register() {
+            let phone = document.getElementById('phone').value.trim();
+            let code = document.getElementById('code').value.trim();
+
+            if(!phone || !code){
+                alert("Please fill all fields!");
+                return;
+            }
+
+            alert(`Registered successfully!\nPhone: ${phone}`);
+        }
+    </script>
+
+</body>
+</html>
